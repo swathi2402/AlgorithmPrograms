@@ -11,7 +11,9 @@ public class PermutationMain {
 		inputString = inputString.toUpperCase();
 		FindPermutationIF findPermutation = new FindPermutationImpl();
 		List<String> permutationList = findPermutation.permutationIterative(inputString);
-		System.out.println("The permutations of " + inputString + " is: ");
+		System.out.println("The permutations of " + inputString + " in iterative way is: ");
 		System.out.println(permutationList);
+		findPermutation.permutationRecursive(inputString);
+		scanner.close();
 	}
 }

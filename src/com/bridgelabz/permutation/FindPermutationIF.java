@@ -4,4 +4,6 @@ import java.util.List;
 
 public interface FindPermutationIF {
 	public List<String> permutationIterative(String string);
+
+	public void permutationRecursive(String string);
 }
