@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BinarySearchMain {
 
-	private static int binarySearch(String[] wordsList, String word) {
+	private static <T extends Comparable<T>> int binarySearch(T[] wordsList, T word) {
 		int startIndex = 0;
 		int endIndex = wordsList.length - 1;
 
