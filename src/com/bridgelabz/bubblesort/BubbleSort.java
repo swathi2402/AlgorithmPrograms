@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BubbleSort {
 
-	private static <T extends Comparable<T>>void bubbleSort(T[] intWordList) {
+	private static <T extends Comparable<T>> void bubbleSort(T[] intWordList) {
 		{
 			int sizeOfList = intWordList.length;
 
