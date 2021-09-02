@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class MergeSort {
 
-	private static void mergeSort(String[] wordsList, int lengthOfArray) {
+	private static <T extends Comparable<T>> void mergeSort(T[] wordsList, int lengthOfArray) {
 		if (lengthOfArray < 2) {
 			return;
 		}
 
 		int middleIndex = lengthOfArray / 2;
-		String[] leftHalf = new String[middleIndex];
-		String[] rightHalf = new String[lengthOfArray - middleIndex];
+		T[] leftHalf = (T[]) new String[middleIndex];
+		T[] rightHalf = (T[]) new String[lengthOfArray - middleIndex];
 
 		int k = 0;
 		for (int index = 0; index < lengthOfArray; index++) {
@@ -28,7 +28,7 @@ public class MergeSort {
 		merge(leftHalf, rightHalf, wordsList);
 	}
 
-	private static void merge(String[] leftHalf, String[] rightHalf, String[] wordsList) {
+	private static <T extends Comparable<T>> void merge(T[] leftHalf, T[] rightHalf, T[] wordsList) {
 		int index = 0, leftIndex = 0, rightIndex = 0;
 		while (leftIndex < leftHalf.length && rightIndex < rightHalf.length) {
 
