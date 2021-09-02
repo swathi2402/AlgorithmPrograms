@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class InsertionSort {
 
-	private static void insertionSort(String[] wordsList) {
+	private static <T extends Comparable<T>>void insertionSort(T[] wordsList) {
 		int sizeOfList = wordsList.length;
 		
 		for (int unsortedIndex = 0; unsortedIndex < sizeOfList; unsortedIndex++) {
-			String key = wordsList[unsortedIndex];
+			T key = wordsList[unsortedIndex];
 			int sortedIndex = unsortedIndex - 1;
 			
 			while (sortedIndex >= 0 && wordsList[sortedIndex].compareTo(key) > 0) {
