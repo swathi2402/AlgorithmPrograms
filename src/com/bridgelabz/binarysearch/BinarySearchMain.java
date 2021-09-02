@@ -1,5 +1,6 @@
 package com.bridgelabz.binarysearch;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinarySearchMain {
@@ -30,13 +31,14 @@ public class BinarySearchMain {
 		System.out.println("Enter the string: ");
 		String inputString = scanner.nextLine();
 		String[] wordsList = inputString.split(" ");
+		Arrays.sort(wordsList);
 		System.out.println("Enter the word to search: ");
 		String word = scanner.nextLine();
 		int isPresent = binarySearch(wordsList, word);
 		if (isPresent == -1)
 			System.out.println("Word '" + word + "' is not present");
 		else
-			System.out.println("Word '" + word + "' is present at index " + isPresent);
+			System.out.println("Word '" + word + "' is present");
 		scanner.close();
 	}
 }
