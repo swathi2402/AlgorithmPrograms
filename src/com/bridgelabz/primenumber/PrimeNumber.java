@@ -25,5 +25,8 @@ public class PrimeNumber {
 		String primeNumber = primeNumbers();
 		System.out.println("Prime numbers between 1 to 1000:");
 		System.out.println(primeNumber);
+		String[] primeArray = primeNumber.split(" ");
+//		int sizeOfArray = primeArray.length;
+		Operations.findAnagramsAndPalindrome(primeArray);
 	}
 }
