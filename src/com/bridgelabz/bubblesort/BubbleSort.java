@@ -1,11 +1,10 @@
 package com.bridgelabz.bubblesort;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BubbleSort {
 
-	private static void bubbleSort(int[] intWordList) {
+	private static <T extends Comparable<T>>void bubbleSort(T[] intWordList) {
 		{
 			int sizeOfList = intWordList.length;
 
@@ -13,8 +12,8 @@ public class BubbleSort {
 
 				for (int j = 0; j < sizeOfList - i - 1; j++) {
 
-					if (intWordList[j] > intWordList[j + 1]) {
-						int placeHolder = intWordList[j];
+					if (intWordList[j].compareTo(intWordList[j + 1]) > 0) {
+						T placeHolder = intWordList[j];
 						intWordList[j] = intWordList[j + 1];
 						intWordList[j + 1] = placeHolder;
 					}
@@ -32,8 +31,7 @@ public class BubbleSort {
 		System.out.println("Enter the values to be sort: ");
 		String inputString = scanner.nextLine();
 		String[] wordsList = inputString.toLowerCase().split(" ");
-		int[] intWordList = Arrays.stream(wordsList).mapToInt(Integer::parseInt).toArray();
-		bubbleSort(intWordList);
+		bubbleSort(wordsList);
 		scanner.close();
 	}
 
