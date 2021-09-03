@@ -9,28 +9,32 @@ public class FindYourNumber {
 	static Scanner scanner = new Scanner(System.in);
 
 	public static void findNumber() {
-		System.out.println("Enter your answer in 'yes', 'true' or 'false'");
+		System.out.println("Enter your answer in 'true' or 'false'");
 		System.out.println("Is your number between " + lower + " and " + middle);
 		input = scanner.nextLine();
 		do {
 			if (input.equals("true")) {
-				upper = middle;
-				count++;
+				if(lower == middle) {
+					System.out.println("The number you thought was: " + lower);
+					count++;
+					System.out.println("It took " + count + " questions to find your number");
+					break;
+				} else {
+					upper = middle;
+					count++;
+				}
+				
 			} else if (input.equals("false")) {
 				lower = middle;
 				count++;
-			} else if (input.equals("yes")) {
-				System.out.println("The number you thought was: " + middle);
-				count++;
-				System.out.println("It took " + count + " questions to find your number");
-				break;
-			}
-
+			} 
+			
 			if (count <= number) {
 				middle = (lower + upper) / 2;
 				System.out.println("Is your number between " + lower + " and " + middle);
 				input = scanner.nextLine();
 			}
+			
 		} while (lower <= upper && count <= number);
 
 		if (count > number) {
